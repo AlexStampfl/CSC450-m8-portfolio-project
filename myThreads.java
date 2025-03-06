@@ -1,5 +1,4 @@
 public class myThreads extends Thread {
-
     private String task;
 
     // Constructor
@@ -42,7 +41,7 @@ public class myThreads extends Thread {
         try {
             t1.join(); // Waits for the thread to terminate
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("An error occurred in " + Thread.currentThread().getName() + ": " + e.getMessage());
         }
         
         // countDown();
@@ -50,10 +49,13 @@ public class myThreads extends Thread {
         try {
             t2.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("An error occurred in " + Thread.currentThread().getName() + ": " + e.getMessage());
         }
 
         System.out.println("\n-- Threads have finished execution --");
-
     }
 }
+
+
+
+
